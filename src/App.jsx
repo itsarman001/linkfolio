@@ -1,9 +1,25 @@
-function App() {
-  return (
-    <>
-      <h1 className="text-3xl">Hello World</h1>
-    </>
-  )
+import { Routes, Route, Link } from "react-router";
+
+function Home() {
+  return <h1>Home Page</h1>;
 }
 
-export default App
+function About() {
+  return <h1>About Page</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
